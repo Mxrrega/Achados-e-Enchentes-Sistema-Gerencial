@@ -1,0 +1,116 @@
+﻿@model IEnumerable<API_MVC_Achados_e_Enchentes.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0px;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    p {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    th {
+        color: #fff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #e9e9e9;
+    }
+
+    .table td a {
+        margin-right: 10px;
+    }
+
+        .table td a:last-child {
+            margin-right: 0;
+        }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    thead {
+        background-color: #222;
+    }
+
+        thead tr:hover {
+            background-color: #222;
+        }
+</style>
+
+<div class="container">
+    <h1>Usuário</h1>
+
+    <p>
+        <a asp-action="Create">Criar Novo Usuário</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.UsuarioNome)</th>
+                <th>@Html.DisplayNameFor(model => model.UsuarioTelefone)</th>
+                <th>@Html.DisplayNameFor(model => model.UsuarioEmail)</th>
+                <th>@Html.DisplayNameFor(model => model.UsuarioSenha)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.UsuarioNome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UsuarioTelefone)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UsuarioEmail)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UsuarioSenha)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

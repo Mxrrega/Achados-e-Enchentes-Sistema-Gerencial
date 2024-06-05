@@ -1,0 +1,108 @@
+﻿@model API_MVC_Achados_e_Enchentes.Models.Observacoes
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0px;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .col-md-4 {
+        width: 33.333333%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+    .text-danger {
+        color: #dc3545;
+    }
+</style>
+
+<h1>Editar Observações</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ObservacaoDescricao" class="control-label"></label>
+                <input asp-for="ObservacaoDescricao" class="form-control" />
+                <span asp-validation-for="ObservacaoDescricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoLocal" class="control-label"></label>
+                <input asp-for="ObservacaoLocal" class="form-control" />
+                <span asp-validation-for="ObservacaoLocal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoData" class="control-label"></label>
+                <input asp-for="ObservacaoData" class="form-control" />
+                <span asp-validation-for="ObservacaoData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaId" class="control-label"></label>
+                <select asp-for="PessoaId" class="form-control" asp-items="ViewBag.PessoaId"></select>
+                <span asp-validation-for="PessoaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

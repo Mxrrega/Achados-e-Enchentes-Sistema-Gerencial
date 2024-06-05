@@ -1,0 +1,173 @@
+﻿@model API_MVC_Achados_e_Enchentes.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Criar";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0px;
+    }
+
+    h1, h4 {
+        color: #333;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    .control-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    div > a {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+    }
+</style>
+
+<h1>Criar Pessoa</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PessoaNome" class="control-label"></label>
+                <input asp-for="PessoaNome" class="form-control" />
+                <span asp-validation-for="PessoaNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaRoupa" class="control-label"></label>
+                <input asp-for="PessoaRoupa" class="form-control" />
+                <span asp-validation-for="PessoaRoupa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaCor" class="control-label"></label>
+                <input asp-for="PessoaCor" class="form-control" />
+                <span asp-validation-for="PessoaCor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaSexo" class="control-label"></label>
+                <input asp-for="PessoaSexo" class="form-control" />
+                <span asp-validation-for="PessoaSexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaObservacao" class="control-label"></label>
+                <input asp-for="PessoaObservacao" class="form-control" />
+                <span asp-validation-for="PessoaObservacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaLocalDesaparecimento" class="control-label"></label>
+                <input asp-for="PessoaLocalDesaparecimento" class="form-control" />
+                <span asp-validation-for="PessoaLocalDesaparecimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaFoto" class="control-label"></label>
+                <input asp-for="PessoaFoto" class="form-control" />
+                <span asp-validation-for="PessoaFoto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaDtDesaparecimento" class="control-label"></label>
+                <input asp-for="PessoaDtDesaparecimento" class="form-control" />
+                <span asp-validation-for="PessoaDtDesaparecimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaDtEncontro" class="control-label"></label>
+                <input asp-for="PessoaDtEncontro" class="form-control" />
+                <span asp-validation-for="PessoaDtEncontro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaStatus" class="control-label"></label>
+                <input asp-for="PessoaStatus" class="form-control" />
+                <span asp-validation-for="PessoaStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
