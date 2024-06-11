@@ -115,13 +115,12 @@
             }
 
         a {
-            color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
 
             a:hover {
-                text-decoration: underline;
+                font-weight: bolder;
             }
 
         div > a {
@@ -149,33 +148,42 @@
         }
 
         .navbar {
-            background-color: #fff;
+            background-color: #000;
             border-bottom: 1px solid #e3e3e3;
             padding: 15px 20px;
             margin: 0;
         }
 
-        .navbar-brand {
+        .logo {
             font-size: 24px;
             font-weight: bold;
             margin: 0;
+            color: #ffff;
+        }
+        .logo:hover {
+            color: #ffff;
+            cursor: default;
         }
 
-        .nav-link {
-            color: #333;
+        .button {
+            color: #ffff;
+            font-weight: 700;
+            padding: 15px;
+            display: block;
         }
 
-            .nav-link:hover {
-                color: #007bff;
+            .button:hover {
+                font-weight: 900;
+                color: gray;
             }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Achados e Enchentes</a>
+                <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">Achados e Enchentes</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -183,13 +191,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuario</a>
+                            <a class="button" asp-area="" asp-controller="Usuario" asp-action="Index">Usuario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pessoa" asp-action="Index">Pessoa</a>
+                            <a class="button" asp-area="" asp-controller="Pessoa" asp-action="Index">Pessoa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Observacoes" asp-action="Index">Observações</a>
+                            <a class="button" asp-area="" asp-controller="Observacoes" asp-action="Index">Observações</a>
                         </li>
                     </ul>
                 </div>

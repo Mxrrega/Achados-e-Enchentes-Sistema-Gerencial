@@ -18,6 +18,10 @@
         margin-bottom: 20px;
     }
 
+    .button-action {
+        color: #007bff;
+    }
+
     a {
         color: #007bff;
         text-decoration: none;
@@ -170,9 +174,9 @@
                         @Html.DisplayFor(modelItem => item.Usuario.Id)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
-                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> 
-                        <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="button-action">Editar</a> 
+                            <a asp-action="Details" asp-route-id="@item.Id" class="button-action">Detalhes</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="button-action">Deletar</a>
                     </td>
                 </tr>
             }
